@@ -294,7 +294,7 @@ void DSGraph::writeGraphToFile(llvm::raw_ostream &O,
   O << "Writing '" << Filename << "'...";
   if (!DontPrintGraphs) {
     std::string Error;
-    llvm::raw_fd_ostream F(Filename.c_str(), Error, sys::fs::F_Text);
+    llvm::raw_fd_ostream F(Filename.c_str(), Error);
 
     if (Error.size()) {
       O << "  error opening file for writing! " << Error << "\n";

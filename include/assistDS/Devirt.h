@@ -21,7 +21,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/DerivedTypes.h"
-#include "llvm/IR/InstVisitor.h"
+#include "llvm/InstVisitor.h"
 #include "llvm/IR/DataLayout.h"
 
 using namespace llvm;
@@ -63,7 +63,7 @@ namespace llvm {
 
       virtual void getAnalysisUsage(AnalysisUsage &AU) const {
         AU.addRequired<dsa::CallTargetFinder<EQTDDataStructures> >();
-        AU.addRequired<DataLayoutPass>();
+        AU.addRequired<DataLayout>();
       }
 
       // Visitor methods for analyzing instructions
